@@ -1,0 +1,47 @@
+<div class="maniContainer col">
+
+  <nav class="navbar navbar-light shadow-sm bg-white">
+    <span class="navbar-brand mb-0 h1 ms-4">App Name</span>
+
+    <a class="navbar-brand float-end rounded-5" href="#">
+      <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"style="border-radius: 50%" width="30" height="30" alt="">
+    </a>
+  </nav>
+
+  <div class="row subContainer">
+
+    <div class="d-flex flex-column flex-shrink-0 p-3 h-100 shadow bg-white left-nav-con">
+
+      <ul class="list-group border border-0 border-bottom">
+        <li class="list-group-item d-flex justify-content-between align-items-start border border-0 border-bottom-2">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold menuCon">Menu</div>
+             &nbsp;
+          </div>
+        </li>
+      </ul>
+
+      <div class="btn-group-vertical fullWidthNavbar">
+        <button type="button" class="btn " style="text-align: left;border-radius: 0;" [ngClass]="option.isActive ? 'btn-primary':'btn-light'"  *ngFor="let option of leftNavOptions let i = index" (click)="navigateTo(i)">
+          {{option.title}}</button>
+      
+      </div>
+
+      <div class="btn-group-vertical minWidthNavbar">
+        <button type="button" class="btn " style="text-align: left;border-radius: 0;" [ngClass]="option.isActive ? 'btn-primary':'btn-light'"  *ngFor="let option of leftNavOptions let i = index" (click)="navigateTo(i)">
+          <span class="material-icons custom-fontSize" [ngClass]="option.isActive ? 'text-white':'text-primary'">
+            {{option.icon}}
+            </span></button>
+      
+      </div>
+
+
+    </div>
+    
+    <div class="routerContainer">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+</div>
